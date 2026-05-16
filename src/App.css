@@ -10,6 +10,22 @@
   gap: 2rem;
 }
 
+/* Image-only slide */
+
+.slide-image-wrapper {
+  grid-row: 1 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
 /* Header */
 
 .deck-header {
