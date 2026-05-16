@@ -50,6 +50,10 @@ function App() {
         <div className="slide-image-wrapper" aria-live="polite">
           <img src={slide.image} alt="" />
         </div>
+      ) : slide.question ? (
+        <div className="slide-question-wrapper" aria-live="polite">
+          <p className="question-text">{slide.question}</p>
+        </div>
       ) : (
         <>
           <header className="deck-header">
