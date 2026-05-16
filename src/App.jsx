@@ -46,7 +46,12 @@ function App() {
 
   return (
     <main className="deck">
-      {slide.image ? (
+      {slide.heading && slide.image ? (
+        <div className="slide-heading-image-wrapper" aria-live="polite">
+          <h1 className="slide-heading-text">{slide.heading}</h1>
+          <img src={slide.image} alt="" />
+        </div>
+      ) : slide.image ? (
         <div className="slide-image-wrapper" aria-live="polite">
           <img src={slide.image} alt="" />
         </div>
