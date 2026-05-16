@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import './App.css'
 
 const slides = [
@@ -117,10 +117,6 @@ function App() {
 
   const totalSlides = slides.length
   const slide = slides[currentSlide]
-  const progressPercent = useMemo(
-    () => ((currentSlide + 1) / totalSlides) * 100,
-    [currentSlide, totalSlides],
-  )
 
   const goPrevious = useCallback(
     () => setCurrentSlide((value) => Math.max(0, value - 1)),
@@ -188,16 +184,6 @@ function App() {
       </section>
 
       <footer className="deck-footer">
-        <div className="progress-row">
-          <span>
-            Slide {currentSlide + 1} of {totalSlides}
-          </span>
-          <span>{Math.round(progressPercent)}%</span>
-        </div>
-        <div className="progress-track" aria-hidden="true">
-          <div className="progress-fill" style={{ width: `${progressPercent}%` }} />
-        </div>
-
         <div className="nav-row">
           <button type="button" onClick={goPrevious} disabled={currentSlide === 0}>
             Previous
