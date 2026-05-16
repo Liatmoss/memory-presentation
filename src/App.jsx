@@ -59,6 +59,22 @@ function App() {
         <div className="slide-question-wrapper" aria-live="polite">
           <p className="question-text">{slide.question}</p>
         </div>
+      ) : slide.layout === 'two-column' ? (
+        <>
+          <header className="deck-header">
+            <p className="eyebrow">GHCP Session Best Practices</p>
+            <h1>{slide.title}</h1>
+          </header>
+
+          <section className="deck-content deck-content--two-column" aria-live="polite">
+            <ol className="numbered-list" start="0">
+              {slide.points.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ol>
+            <div className="slide-right-panel" />
+          </section>
+        </>
       ) : (
         <>
           <header className="deck-header">
