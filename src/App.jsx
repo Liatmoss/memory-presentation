@@ -46,32 +46,40 @@ function App() {
 
   return (
     <main className="deck">
-      <header className="deck-header">
-        <p className="eyebrow">GHCP Session Best Practices</p>
-        <h1>{slide.title}</h1>
-        <p className="subtitle">{slide.subtitle}</p>
-      </header>
+      {slide.image ? (
+        <div className="slide-image-wrapper" aria-live="polite">
+          <img src={slide.image} alt="" />
+        </div>
+      ) : (
+        <>
+          <header className="deck-header">
+            <p className="eyebrow">GHCP Session Best Practices</p>
+            <h1>{slide.title}</h1>
+            <p className="subtitle">{slide.subtitle}</p>
+          </header>
 
-      <section className="deck-content" aria-live="polite">
-        <ul>
-          {slide.points.map((point) => (
-            <li key={point}>{point}</li>
-          ))}
-        </ul>
+          <section className="deck-content" aria-live="polite">
+            <ul>
+              {slide.points.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
 
-        {slide.examples && (
-          <div className="example-grid">
-            {slide.examples.map((example) => (
-              <article key={example.label} className="example-card">
-                <h2>{example.label}</h2>
-                <pre>
-                  <code>{example.code}</code>
-                </pre>
-              </article>
-            ))}
-          </div>
-        )}
-      </section>
+            {slide.examples && (
+              <div className="example-grid">
+                {slide.examples.map((example) => (
+                  <article key={example.label} className="example-card">
+                    <h2>{example.label}</h2>
+                    <pre>
+                      <code>{example.code}</code>
+                    </pre>
+                  </article>
+                ))}
+              </div>
+            )}
+          </section>
+        </>
+      )}
 
       <footer className="deck-footer">
         <div className="nav-row">
