@@ -26,6 +26,13 @@ const ICONS = {
       <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
     </svg>
   ),
+  layers: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <polygon points="12 2 2 7 12 12 22 7 12 2" />
+      <polyline points="2 17 12 22 22 17" />
+      <polyline points="2 12 12 17 22 12" />
+    </svg>
+  ),
 }
 
 function App() {
@@ -99,6 +106,27 @@ function App() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      ) : slide.layout === 'comparison-cards' ? (
+        <div className="comparison-wrapper" aria-live="polite">
+          <h1 className="comparison-title">{slide.title}</h1>
+          <div className="comparison-grid">
+            {slide.cards.map((card) => (
+              <div key={card.heading} className="comparison-card">
+                <div className="comparison-card-header">
+                  <div className="comparison-card-icon">{ICONS[card.icon]}</div>
+                  <h2 className="comparison-card-heading">{card.heading}</h2>
+                </div>
+                <ul className="comparison-points">
+                  {card.points.map((point) => (
+                    <li key={point.label}>
+                      <span><span className="comparison-point-label">{point.label}:</span> {point.text}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       ) : slide.layout === 'content-card' ? (

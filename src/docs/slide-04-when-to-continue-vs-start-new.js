@@ -4,7 +4,7 @@ const slide = {
   points: [
     'New chat, new session',
     'Summarise your current session',
-    'AI does not remember',
+    'Small sessions are good sessions',
     'Utilise instruction documentation',
     'Be aware of switching models',
   ],

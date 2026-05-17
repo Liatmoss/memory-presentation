@@ -239,6 +239,108 @@
   height: 1.25rem;
 }
 
+/* Comparison cards layout (slide 7) */
+
+.comparison-wrapper {
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.comparison-title {
+  margin: 0;
+  font-size: clamp(1.8rem, 4.5vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #ffffff;
+  text-shadow:
+    0 0 40px rgba(0, 229, 255, 0.6),
+    0 0 80px rgba(0, 229, 255, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.comparison-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(63, 81, 181, 0.4);
+  border-radius: 12px;
+  padding: 2rem 2.25rem;
+  backdrop-filter: blur(4px);
+}
+
+.comparison-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.comparison-card-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: rgba(63, 81, 181, 0.25);
+  color: #90caf9;
+  flex-shrink: 0;
+}
+
+.comparison-card-icon svg {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.comparison-card-heading {
+  margin: 0;
+  font-size: clamp(1.3rem, 2.8vw, 1.75rem);
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.comparison-points {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1.25rem;
+  font-size: clamp(1rem, 2.1vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.55;
+}
+
+.comparison-points li {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+}
+
+.comparison-points li::before {
+  content: '→';
+  color: #90caf9;
+  flex-shrink: 0;
+  font-weight: 600;
+  margin-top: 0.05em;
+}
+
+.comparison-point-label {
+  color: #90caf9;
+  font-weight: 700;
+}
+
 /* Content card layout (slide 6+) */
 
 .content-card-wrapper {
