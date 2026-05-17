@@ -7,7 +7,7 @@ const slide = {
     { icon: 'layers', text: 'Architectural patterns' },
     { icon: 'beaker', text: 'Testing expectations' },
     { icon: 'shield', text: 'Security rules' },
-    { icon: 'terminal', text: 'How to login to various CLIs' },
+    { icon: 'terminal', text: 'How to login to various CLI and MCP servers' },
     { icon: 'book', text: 'Company specific terms of information that might be relevant' },
   ],
 }

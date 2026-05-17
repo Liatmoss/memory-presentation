@@ -220,7 +220,10 @@ function App() {
                 <li key={point}>{point}</li>
               ))}
             </ol>
-            <div className="slide-right-panel" />
+            <div className="slide-right-panel">
+              {ICONS.imagePlaceholder}
+              <span>Image placeholder</span>
+            </div>
           </div>
         </div>
       ) : (
