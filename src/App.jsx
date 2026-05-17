@@ -21,6 +21,11 @@ const ICONS = {
       <circle cx="12" cy="12" r="3" />
     </svg>
   ),
+  summarise: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+    </svg>
+  ),
 }
 
 function App() {
@@ -94,6 +99,28 @@ function App() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      ) : slide.layout === 'content-card' ? (
+        <div className="content-card-wrapper" aria-live="polite">
+          <h1 className="content-card-title">{slide.title}</h1>
+          <p className="content-card-subtitle">{slide.subtitle}</p>
+          <div className="content-card">
+            <div className="content-card-header">
+              <div className="content-card-icon">{ICONS[slide.card.icon]}</div>
+              <h2 className="content-card-heading">{slide.card.heading}</h2>
+            </div>
+            <ul className="content-card-points">
+              {slide.card.points.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
+            <p className="content-card-secondary-heading">{slide.card.secondaryHeading}</p>
+            <ul className="content-card-points">
+              {slide.card.secondaryPoints.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
           </div>
         </div>
       ) : slide.layout === 'dark-list' ? (
