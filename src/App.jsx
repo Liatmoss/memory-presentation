@@ -96,22 +96,18 @@ function App() {
             </div>
           </div>
         </div>
-      ) : slide.layout === 'two-column' ? (
-        <>
-          <header className="deck-header">
-            <p className="eyebrow">GHCP Session Best Practices</p>
-            <h1>{slide.title}</h1>
-          </header>
-
-          <section className="deck-content deck-content--two-column" aria-live="polite">
+      ) : slide.layout === 'dark-list' ? (
+        <div className="dark-list-wrapper" aria-live="polite">
+          <h1 className="dark-list-title">{slide.title}</h1>
+          <div className="dark-list-columns">
             <ol className="numbered-list" start="0">
               {slide.points.map((point) => (
                 <li key={point}>{point}</li>
               ))}
             </ol>
             <div className="slide-right-panel" />
-          </section>
-        </>
+          </div>
+        </div>
       ) : (
         <>
           <header className="deck-header">
