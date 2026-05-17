@@ -1,5 +1,5 @@
 const slide = {
-  layout: 'two-column',
+  layout: 'dark-list',
   title: 'Utilising Context Windows and Memory Effectively:',
   points: [
     'New chat, new session',
