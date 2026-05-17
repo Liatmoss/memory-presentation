@@ -280,7 +280,7 @@
   counter-reset: slide-counter -1;
   display: grid;
   gap: clamp(1.25rem, 2.5vh, 2rem);
-  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  font-size: clamp(1.2rem, 2.6vw, 1.6rem);
   line-height: 1.4;
   color: #ffffff;
   align-content: center;
