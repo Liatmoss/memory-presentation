@@ -6,6 +6,7 @@ import slide05 from './slide-05-ghcp-chat-example.js'
 import slide06 from './slide-06-ghcp-cli-example.js'
 import slide07 from './slide-07-why-smaller-context-windows.js'
 import slide08 from './slide-08-closing-takeaways.js'
+import slide09 from './slide-09-switching-models.js'
 
 const slides = [
   slide01,
@@ -16,6 +17,7 @@ const slides = [
   slide06,
   slide07,
   slide08,
+  slide09,
 ]
 
 export default slides

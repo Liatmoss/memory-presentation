@@ -68,6 +68,14 @@ const ICONS = {
       <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
     </svg>
   ),
+  swap: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <polyline points="17 1 21 5 17 9" />
+      <path d="M3 11V9a4 4 0 0 1 4-4h14" />
+      <polyline points="7 23 3 19 7 15" />
+      <path d="M21 13v2a4 4 0 0 1-4 4H3" />
+    </svg>
+  ),
   imagePlaceholder: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
@@ -192,7 +200,7 @@ function App() {
       ) : slide.layout === 'content-card' ? (
         <div className="content-card-wrapper" aria-live="polite">
           <h1 className="content-card-title">{slide.title}</h1>
-          <p className="content-card-subtitle">{slide.subtitle}</p>
+          {slide.subtitle && <p className="content-card-subtitle">{slide.subtitle}</p>}
           <div className="content-card">
             <div className="content-card-header">
               <div className="content-card-icon">{ICONS[slide.card.icon]}</div>
