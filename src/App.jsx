@@ -2,6 +2,27 @@ import { useCallback, useEffect, useState } from 'react'
 import './App.css'
 import slides from './docs/index.js'
 
+const ICONS = {
+  lightning: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+    </svg>
+  ),
+  target: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="10" />
+      <circle cx="12" cy="12" r="6" />
+      <circle cx="12" cy="12" r="2" />
+    </svg>
+  ),
+  sparkle: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" />
+      <circle cx="12" cy="12" r="3" />
+    </svg>
+  ),
+}
+
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0)
 
@@ -58,6 +79,22 @@ function App() {
       ) : slide.question ? (
         <div className="slide-question-wrapper" aria-live="polite">
           <p className="question-text">{slide.question}</p>
+        </div>
+      ) : slide.layout === 'rule-zero' ? (
+        <div className="rule-zero-wrapper" aria-live="polite">
+          <div className="rule-zero-content">
+            <p className="rule-zero-title">{slide.title}</p>
+            <h1 className="rule-zero-headline">{slide.headline}</h1>
+            <p className="rule-zero-subtitle">{slide.subtitle}</p>
+            <div className="rule-zero-cards">
+              {slide.cards.map((card) => (
+                <div key={card.label} className="rule-zero-card">
+                  <div className="rule-zero-card-icon">{ICONS[card.icon]}</div>
+                  <span>{card.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       ) : slide.layout === 'two-column' ? (
         <>
