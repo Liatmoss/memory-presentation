@@ -1,11 +1,14 @@
 const slide = {
-  title: 'Closing takeaways',
-  subtitle: 'Simple rules for better outcomes every day.',
-  points: [
-    'One session = one task.',
-    'If the task changes, start a new session.',
-    'Keep prompts and context windows small and relevant.',
-    'Use the AI like a focused workspace, not a long-lived memory dump.',
+  layout: 'image-list',
+  title: 'Instruction Documentation',
+  items: [
+    { icon: 'pattern', text: 'Specific design patterns the team follows' },
+    { icon: 'tag', text: 'Typical naming conventions used' },
+    { icon: 'layers', text: 'Architectural patterns' },
+    { icon: 'beaker', text: 'Testing expectations' },
+    { icon: 'shield', text: 'Security rules' },
+    { icon: 'terminal', text: 'How to login to various CLIs' },
+    { icon: 'book', text: 'Company specific terms of information that might be relevant' },
   ],
 }
 

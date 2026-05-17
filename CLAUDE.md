@@ -44,6 +44,7 @@ src/
 | `rule-zero` | slide 5 | dark hero: label, headline, subtitle, three icon cards |
 | `content-card` | slide 6 | dark full-screen, title, subtitle, dark card with arrow bullets |
 | `comparison-cards` | slide 7 | dark full-screen, title, two side-by-side cards with icon + highlighted bullet points |
+| `image-list` | slide 8 | dark full-screen, title, left image placeholder, right icon-per-bullet list |
 
 ## Colour scheme (dark slides)
 
