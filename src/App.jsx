@@ -68,6 +68,18 @@ const ICONS = {
       <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
     </svg>
   ),
+  brain: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z" />
+      <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z" />
+    </svg>
+  ),
+  video: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <polygon points="23 7 16 12 23 17 23 7" />
+      <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+    </svg>
+  ),
   swap: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <polyline points="17 1 21 5 17 9" />
@@ -155,6 +167,28 @@ function App() {
                   <span>{card.label}</span>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      ) : slide.layout === 'key-takeaways' ? (
+        <div className="key-takeaways-wrapper" aria-live="polite">
+          <div className="key-takeaways-header">
+            <h1 className="key-takeaways-title">{slide.title}</h1>
+            <p className="key-takeaways-subtitle">{slide.subtitle}</p>
+          </div>
+          <div className="key-takeaways-cards">
+            {slide.cards.map((card) => (
+              <div key={card.label} className="key-takeaways-card">
+                <div className="key-takeaways-card-icon">{ICONS[card.icon]}</div>
+                <span className="key-takeaways-card-label">{card.label}</span>
+              </div>
+            ))}
+          </div>
+          <div className="key-takeaways-callout">
+            <div className="key-takeaways-callout-icon">{ICONS[slide.callout.icon]}</div>
+            <div className="key-takeaways-callout-content">
+              <p className="key-takeaways-callout-heading">{slide.callout.heading}</p>
+              <p className="key-takeaways-callout-text">{slide.callout.text}</p>
             </div>
           </div>
         </div>
