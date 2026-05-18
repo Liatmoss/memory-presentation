@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import './App.css'
 import slides from './docs/index.js'
 
@@ -99,6 +99,7 @@ const ICONS = {
 
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const videoRef = useRef(null)
 
   const totalSlides = slides.length
   const slide = slides[currentSlide]
@@ -111,6 +112,17 @@ function App() {
     () => setCurrentSlide((value) => Math.min(totalSlides - 1, value + 1)),
     [totalSlides],
   )
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+    video.currentTime = 0
+    video.play()
+    return () => {
+      video.pause()
+      video.currentTime = 0
+    }
+  }, [currentSlide])
 
   useEffect(() => {
     const onKeyDown = (event) => {
@@ -266,8 +278,21 @@ function App() {
               ))}
             </ol>
             <div className="slide-right-panel">
-              {ICONS.imagePlaceholder}
-              <span>Image placeholder</span>
+              {slide.video ? (
+                <video
+                  ref={videoRef}
+                  src={slide.video}
+                  muted
+                  playsInline
+                  loop
+                  className="slide-video"
+                />
+              ) : (
+                <>
+                  {ICONS.imagePlaceholder}
+                  <span>Image placeholder</span>
+                </>
+              )}
             </div>
           </div>
         </div>

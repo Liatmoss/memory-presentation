@@ -748,9 +748,23 @@
   letter-spacing: 0.04em;
 }
 
+.slide-right-panel:has(.slide-video) {
+  border: none;
+  overflow: hidden;
+  align-items: flex-end;
+}
+
 .slide-right-panel svg {
   width: 4rem;
   height: 4rem;
+}
+
+.slide-video {
+  width: 100%;
+  height: auto;
+  max-height: calc(100svh - 16rem);
+  object-fit: contain;
+  border-radius: 10px;
 }
 
 /* Example cards (admonition-style) */
