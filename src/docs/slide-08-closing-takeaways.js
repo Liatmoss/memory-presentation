@@ -1,6 +1,9 @@
+import demoVideo from '../assets/slide-08-demo.mov'
+
 const slide = {
   layout: 'image-list',
   title: 'Instruction Documentation',
+  video: demoVideo,
   items: [
     { icon: 'pattern', text: 'Specific design patterns the team follows' },
     { icon: 'tag', text: 'Typical naming conventions used' },

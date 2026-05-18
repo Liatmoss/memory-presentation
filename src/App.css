@@ -427,6 +427,13 @@
   height: 4rem;
 }
 
+.image-list-video {
+  height: 28rem;
+  width: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
 .image-list-items {
   margin: 0;
   padding: 0;

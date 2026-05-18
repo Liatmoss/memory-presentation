@@ -208,10 +208,21 @@ function App() {
         <div className="image-list-wrapper" aria-live="polite">
           <h1 className="image-list-title">{slide.title}</h1>
           <div className="image-list-columns">
-            <div className="image-list-placeholder">
-              {ICONS.imagePlaceholder}
-              <span>Image placeholder</span>
-            </div>
+            {slide.video ? (
+              <video
+                ref={videoRef}
+                src={slide.video}
+                muted
+                playsInline
+                loop
+                className="image-list-video"
+              />
+            ) : (
+              <div className="image-list-placeholder">
+                {ICONS.imagePlaceholder}
+                <span>Image placeholder</span>
+              </div>
+            )}
             <ul className="image-list-items">
               {slide.items.map((item) => (
                 <li key={item.text}>
