@@ -46,6 +46,17 @@ src/
 | `comparison-cards` | slide 7 | dark full-screen, title, two side-by-side cards with icon + highlighted bullet points |
 | `image-list` | slide 8 | dark full-screen, title, left image placeholder, right icon-per-bullet list |
 
+## Git workflow
+
+Always work on a feature branch and open a PR — never push directly to `main`. PRs are used to track changes.
+
+```bash
+git checkout -b feat/your-branch-name
+# make changes, commit
+git push -u origin feat/your-branch-name
+gh pr create ...
+```
+
 ## Colour scheme (dark slides)
 
 - Headline: `#ffffff` with `text-shadow: 0 0 40px rgba(0,229,255,0.6), 0 0 80px rgba(0,229,255,0.3)`
