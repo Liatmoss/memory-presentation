@@ -245,7 +245,10 @@ function App() {
                 <li key={point}>{point}</li>
               ))}
             </ul>
-            <p className="content-card-secondary-heading">{slide.card.secondaryHeading}</p>
+            <div className="content-card-header">
+              {slide.card.secondaryIcon && <div className="content-card-icon">{ICONS[slide.card.secondaryIcon]}</div>}
+              <h2 className="content-card-heading">{slide.card.secondaryHeading}</h2>
+            </div>
             <ul className="content-card-points">
               {slide.card.secondaryPoints.map((point) => (
                 <li key={point}>{point}</li>

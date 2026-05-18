@@ -6,7 +6,7 @@ const slide = {
     'Summarise your current session',
     'Small sessions are good sessions',
     'Utilise instruction documentation',
-    'Be aware of switching models',
+    'Be aware of model choices',
   ],
 }
 

@@ -663,11 +663,8 @@
   margin-top: 0.05em;
 }
 
-.content-card-secondary-heading {
-  margin: 1.5rem 0 0.75rem;
-  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
-  font-weight: 700;
-  color: #90caf9;
+.content-card-points + .content-card-header {
+  margin-top: 1.5rem;
 }
 
 /* Dark list layout (slide 4) */

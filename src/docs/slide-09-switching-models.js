@@ -1,19 +1,22 @@
 const slide = {
   layout: 'content-card',
-  title: 'Switching Models',
+  title: 'Model Choices',
+  subtitle: 'Larger models = increased context = higher cost',
   card: {
-    icon: 'swap',
-    heading: 'Switching models after a lot of work:',
+    icon: 'brain',
+    heading: 'Choose a larger model when:',
     points: [
-      'Loss of previous context',
-      'Inconsistent or incorrect answers',
-      'Mistakes in long tasks',
-      'Extra token usage because the new model may need to re-read or re-derive everything',
+      'The task is complex',
+      'There is a lot of information to sort through',
+      'Accuracy and reasoning are important',
+      'For example, complex documentation of services',
     ],
-    secondaryHeading: 'Best practices:',
+    secondaryIcon: 'lightning',
+    secondaryHeading: 'Choose a smaller model when:',
     secondaryPoints: [
-      'Keep the same model for the whole task',
-      'Avoid switching unless you have a specific reason',
+      'The task is short',
+      'The answer is straightforward',
+      'For example, a minor code change',
     ],
   },
 }
